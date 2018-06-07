@@ -58,19 +58,19 @@
     >- elastic-job , Netflix Eureka , Hystric
 
 #### 对比：
-|  | cat | zipkin | pinpoint | skywalking  |
-| ---  | ---  | --- | ---  | ---  | --- |
-|依赖|Java 6，7，8<br>Maven 3.2.3+<br>mysql5.6<br>Linux 2.6以及之上（2.6内核才可以支持epoll）|Java 6，7，8<br>Maven3.2+<br>rabbitMQ|Java 6，7，8<br>maven3+<br>Hbase0.94+|Java 6，7，8<br>maven3.0+<br>elasticsearch|
-|实现方式|代码埋点（拦截器，注解，过滤器等）|拦截请求，发送（HTTP，mq）数据至zipkin服务|java探针，字节码增强|java探针，字节码增强|
-|存储选择|mysql，hdfs|in-memory ， mysql ， Cassandra ， Elasticsearch|HBase|elasticsearch，H2|
-|通信方式| - |http ， MQ|thrift|GRPC|
-|MQ监控|不支持|不支持|不支持|支持（RocketMQ，kafka）|
-|全局调用统计|支持|不支持|支持|支持|
-|trace查询|不支持|支持|不支持|支持|
-|报警|支持|不支持|支持|支持|
-|JVM监控|不支持|不支持|支持|支持|
-|优点|功能完善。|spring-cloud-sleuth可以很好的集成zipkin ， 代码无侵入，集成非常简单 ， 社区更加活跃。|完全无侵入， 仅需修改启动方式，界面完善，功能细致。|完全无侵入，界面完善，支持应用拓扑图及单个调用链查询。|
-|缺点|代码侵入性较强，需要埋点<br>文档比较混乱，文档与发布版本的符合性较低，需要依赖点评私服 （或者需要把他私服上的jar手动下载下来，然后上传到我们的私服上去）。|默认使用的是http请求向zipkin上报信息，耗性能。<br>跟sleuth结合可以使用rabbitMQ的方式异步来做，增加了复杂度，需要引入rabbitMQ 。 |不支持查询单个调用链， 对外表现的是整个应用的调用生态。|3.2版本之前BUG较多 ，网上反映兼容性较差 . 3.2新版本的反映情况较少<br>依赖较多。|
-|官网|[https://github.com/dianping/cat](https://github.com/dianping/cat)|[http://zipkin.io/](http://zipkin.io/)|[https://github.com/naver/pinpoint](https://github.com/naver/pinpoint)|[http://skywalking.apache.org/](http://skywalking.apache.org/)|
-|开发者|大众点评|twitter|naver|吴晟（华为开发者）<br>目前已经加入Apache孵化器|
-|使用公司|大众点评， 携程， 陆金所，同程旅游，猎聘网|twitter|naver|华为软件开发云、天源迪科、当当网、京东金融|
+  | cat | zipkin | pinpoint | skywalking  
+ ---  | ---  | --- | ---  | ---  | --- 
+依赖|Java 6，7，8<br>Maven 3.2.3+<br>mysql5.6<br>Linux 2.6以及之上（2.6内核才可以支持epoll）|Java 6，7，8<br>Maven3.2+<br>rabbitMQ|Java 6，7，8<br>maven3+<br>Hbase0.94+|Java 6，7，8<br>maven3.0+<br>elasticsearch
+实现方式|代码埋点（拦截器，注解，过滤器等）|拦截请求，发送（HTTP，mq）数据至zipkin服务|java探针，字节码增强|java探针，字节码增强
+存储选择|mysql，hdfs|in-memory ， mysql ， Cassandra ， Elasticsearch|HBase|elasticsearch，H2
+通信方式| - |http ， MQ|thrift|GRPC
+MQ监控|不支持|不支持|不支持|支持（RocketMQ，kafka）
+全局调用统计|支持|不支持|支持|支持
+trace查询|不支持|支持|不支持|支持
+报警|支持|不支持|支持|支持
+JVM监控|不支持|不支持|支持|支持
+优点|功能完善。|spring-cloud-sleuth可以很好的集成zipkin ， 代码无侵入，集成非常简单 ， 社区更加活跃。|完全无侵入， 仅需修改启动方式，界面完善，功能细致。|完全无侵入，界面完善，支持应用拓扑图及单个调用链查询。
+缺点|代码侵入性较强，需要埋点<br>文档比较混乱，文档与发布版本的符合性较低，需要依赖点评私服 （或者需要把他私服上的jar手动下载下来，然后上传到我们的私服上去）。|默认使用的是http请求向zipkin上报信息，耗性能。<br>跟sleuth结合可以使用rabbitMQ的方式异步来做，增加了复杂度，需要引入rabbitMQ 。 |不支持查询单个调用链， 对外表现的是整个应用的调用生态。|3.2版本之前BUG较多 ，网上反映兼容性较差 . 3.2新版本的反映情况较少<br>依赖较多。
+官网|[https://github.com/dianping/cat](https://github.com/dianping/cat)|[http://zipkin.io/](http://zipkin.io/)|[https://github.com/naver/pinpoint](https://github.com/naver/pinpoint)|[http://skywalking.apache.org/](http://skywalking.apache.org/)
+开发者|大众点评|twitter|naver|吴晟（华为开发者）<br>目前已经加入Apache孵化器
+使用公司|大众点评， 携程， 陆金所，同程旅游，猎聘网|twitter|naver|华为软件开发云、天源迪科、当当网、京东金融
