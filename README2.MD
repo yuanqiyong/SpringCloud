@@ -61,6 +61,7 @@
     - elastic-job , Netflix Eureka , Hystric
 
 #### 对比：
+
 TYPE  | cat | zipkin | pinpoint | skywalking  
  ---  | ---  | --- | ---  | ---  | --- 
 通信方式| - |http ， MQ|thrift|GRPC
