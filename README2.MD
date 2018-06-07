@@ -58,7 +58,7 @@
     >- elastic-job , Netflix Eureka , Hystric
 
 #### 对比：
-  | cat | zipkin | pinpoint | skywalking  
+ytpe  | cat | zipkin | pinpoint | skywalking  
  ---  | ---  | --- | ---  | ---  | --- 
 依赖|Java 6，7，8<br>Maven 3.2.3+<br>mysql5.6<br>Linux 2.6以及之上（2.6内核才可以支持epoll）|Java 6，7，8<br>Maven3.2+<br>rabbitMQ|Java 6，7，8<br>maven3+<br>Hbase0.94+|Java 6，7，8<br>maven3.0+<br>elasticsearch
 实现方式|代码埋点（拦截器，注解，过滤器等）|拦截请求，发送（HTTP，mq）数据至zipkin服务|java探针，字节码增强|java探针，字节码增强
