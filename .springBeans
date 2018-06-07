@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.7.3.201602250914-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+		<config>java:com.springcloud.eureka.server.Demo1</config>
+		<config>java:com.springcloud.eureka.client.Demo2</config>
+		<config>java:com.springcloud.feign.Demo3</config>
+		<config>java:com.springcloud.zuul.Demo4</config>
+	</configs>
+	<autoconfigs>
+		<config>java:com.springcloud.ribbon.Demo3</config>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>
